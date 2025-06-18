@@ -1,3 +1,9 @@
+// Check If There's Local Storage Color Option
+let mainColor = localStorage.getItem('color-option');
+if(mainColor != null){
+    document.documentElement.style.setProperty('--main--color',mainColor);
+}
+
 // toggle setting
 document.querySelector('.toggle-setting .fa-gear').onclick = function(){
     // toggle class fa-spin for rotation on self 
@@ -13,7 +19,10 @@ colorsLi.forEach(li =>{
     li.addEventListener("click",(e) =>{
         // set color on root
         document.documentElement.style.setProperty('--main--color',e.target.dataset.color);
-    })
+        // set color in local storage
+        localStorage.setItem('color-option', e.target.dataset.color);
+
+    });
 });
 
 // select landing page Element
