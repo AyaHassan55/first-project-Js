@@ -33,6 +33,13 @@ colorsLi.forEach(li =>{
     });
 });
 
+// random background option
+let backgroundOption =true;
+// variable to control backgriund interval
+let intervalBackground ; 
+
+
+
 // Switch random background
 const randomBackElement = document.querySelectorAll('.random-background span');
 randomBackElement.forEach(span =>{
@@ -43,6 +50,14 @@ randomBackElement.forEach(span =>{
         });
         // add active class on self
         e.target.classList.add("active");
+
+        if(e.target.dataset.background === 'yes'){
+            backgroundOption = true;
+            randomizeImgs();
+        }else{
+            backgroundOption = false;
+            clearInterval(intervalBackground);
+        }
     });
 });
 
@@ -60,9 +75,20 @@ document.querySelector('.toggle-setting .fa-gear').onclick = function(){
 let landingPage= document.querySelector('.landing-page');
 let imgsArray = ['img1.jpg','img3.jpg','img4.jpg'];
 
-setInterval(()=>{
-    let randomIndx = Math.floor(Math.random() * imgsArray.length);
 
-    landingPage.style.backgroundImage = 'url("imgs/'+ imgsArray[randomIndx] + ' ")';
 
-},10000);
+// function to randomize imgs
+function randomizeImgs (){
+    if(backgroundOption === true){
+        intervalBackground = setInterval(()=>{
+        let randomIndx = Math.floor(Math.random() * imgsArray.length);
+        landingPage.style.backgroundImage = 'url("imgs/'+ imgsArray[randomIndx] + ' ")';
+
+},1000);
+
+    }
+} 
+randomizeImgs()
+
+
+
