@@ -1,8 +1,38 @@
 // Check If There's Local Storage Color Option
 let mainColor = localStorage.getItem('color-option');
-if(mainColor != null){
-    document.documentElement.style.setProperty('--main--color',mainColor);
+if(mainColor !== null){
+    document.documentElement.style.setProperty('--main-color',mainColor);
+
+    // remove active class from every color list
+        document.querySelectorAll(".colors-list li").forEach((ele)=>{
+            ele.classList.remove("active");
+            // add active class on element with data color ===  local storage item
+            if(ele.dataset.color === mainColor){
+                ele.classList.add("active");
+            }
+            
+        });
 }
+
+
+// Switch Color
+const colorsLi = document.querySelectorAll('.colors-list li');
+colorsLi.forEach(li =>{
+    li.addEventListener("click",(e) =>{
+        // set color on root
+        document.documentElement.style.setProperty('--main-color',e.target.dataset.color);
+        // set color in local storage
+        localStorage.setItem('color-option', e.target.dataset.color);
+
+        // remove active class from every children
+        e.target.parentElement.querySelectorAll(".active").forEach((ele)=>{
+            ele.classList.remove("active");
+        });
+        // add active class on self
+        e.target.classList.add("active");
+    });
+});
+
 
 // toggle setting
 document.querySelector('.toggle-setting .fa-gear').onclick = function(){
@@ -13,17 +43,6 @@ document.querySelector('.toggle-setting .fa-gear').onclick = function(){
     document.querySelector('.setting-box').classList.toggle('open');
 };
 
-// Switch Color
-const colorsLi = document.querySelectorAll('.colors-list li');
-colorsLi.forEach(li =>{
-    li.addEventListener("click",(e) =>{
-        // set color on root
-        document.documentElement.style.setProperty('--main--color',e.target.dataset.color);
-        // set color in local storage
-        localStorage.setItem('color-option', e.target.dataset.color);
-
-    });
-});
 
 // select landing page Element
 let landingPage= document.querySelector('.landing-page');
