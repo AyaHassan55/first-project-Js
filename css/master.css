@@ -7,6 +7,12 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+.container{
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
 /* Start Setting Box */
 .setting-box{
     position: fixed;
@@ -96,12 +102,7 @@ body{
 .setting-box .option-box .random-background span.active{
     opacity: 1;
 }
-.setting-box .random-background .yes{
 
-}
-.setting-box .random-background .no{
-
-}
 /* End Setting Box */
 /* Start Landing page */
 .landing-page{
@@ -174,3 +175,34 @@ body{
     font-size: 18px;
 }
 /* End Landing page */
+/* Start About us */
+.about-us{
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.about-us .info-box{
+    flex:1;
+    padding: 30px;
+}
+.about-us .info-box h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0 0 10px;
+}
+.about-us .info-box p{
+    
+    line-height: 1.8;
+    color: #767676;
+    margin: 0;
+}
+
+.about-us .img-box {
+    flex: 1;
+}
+.about-us .img-box img{
+    width: 250px;
+    margin-left: 82px;
+}
+/* End About us */
