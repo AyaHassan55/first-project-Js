@@ -34,9 +34,44 @@ body{
     padding: 8px 0px;
     
 }
-.setting-box .setting-container{
-
+.setting-box .option-box{
+    padding: 20px;
 } 
+.setting-box .option-box h4{
+    margin: 0;
+    color: #666;
+} 
+.setting-box .option-box .colors-list{
+    list-style: none;
+    text-align: center;
+} 
+.setting-box .option-box .colors-list li{
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: .5;
+    cursor: pointer;
+    display: inline-block;
+
+
+}
+.setting-box .option-box .colors-list li:first-child{
+    background-color: var(--main--color);
+}
+.setting-box .option-box .colors-list li:nth-child(2){
+    background-color: #E91E63;
+}
+.setting-box .option-box .colors-list li:nth-child(3){
+    background-color: #009988;
+}.setting-box .option-box .colors-list li:nth-child(4){
+    background-color: #03A9F4;
+}.setting-box .option-box .colors-list li:nth-child(5){
+    background-color: #4CAF50;
+}
+.setting-box .option-box .colors-list li.active{
+    opacity: 1;
+}
 /* End Setting Box */
 /* Start Landing page */
 .landing-page{
