@@ -37,7 +37,26 @@ colorsLi.forEach(li =>{
 let backgroundOption =true;
 // variable to control backgriund interval
 let intervalBackground ; 
+// check if there is local storage random background item
+let backgroundLocalItem = localStorage.getItem("background_option");
+if(backgroundLocalItem !== null){
+    if(backgroundLocalItem === 'true'){
+        backgroundOption = true;
+    }else{
+        backgroundOption = false;
+    }
 
+    // remove active class from all span
+    document.querySelectorAll(".random-background span").forEach(element =>{
+        element.classList.remove('active');
+    });
+
+    if(backgroundLocalItem === 'true'){
+        document.querySelector(".random-background .yes").classList.add('active');
+    }else{
+        document.querySelector(".random-background .no").classList.add('active');
+    }
+}
 
 
 // Switch random background
@@ -54,9 +73,12 @@ randomBackElement.forEach(span =>{
         if(e.target.dataset.background === 'yes'){
             backgroundOption = true;
             randomizeImgs();
+            localStorage.setItem("background_option",true);
         }else{
             backgroundOption = false;
             clearInterval(intervalBackground);
+            localStorage.setItem("background_option",false);
+            
         }
     });
 });
