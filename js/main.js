@@ -1,3 +1,16 @@
+// toggle setting
+document.querySelector('.toggle-setting .fa-gear').onclick = function(){
+    // toggle class fa-spin for rotation on self 
+    this.classList.toggle('fa-spin');
+
+    // toggle class open on main setting box
+    document.querySelector('.setting-box').classList.toggle('open');
+};
+
+
+
+
+
 let landingPage= document.querySelector('.landing-page');
 let imgsArray = ['img1.jpg','img3.jpg','img4.jpg'];
 

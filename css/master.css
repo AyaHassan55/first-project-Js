@@ -16,15 +16,23 @@ body{
     z-index: 1000;
     transition: .3s;
 }
-.setting-box .fa-gear{
+.setting-box.open{
+    left: 0;
+}
+.setting-box .toggle-setting{
     position: absolute;
     right: -30px;
     top: 100px;
     background-color: #FFF;
-    width: 30px;
+    
     text-align: center;
-    padding: 8px 0px;
+    
     cursor: pointer;
+}
+.setting-box .toggle-setting .fa-gear{
+    width: 30px;
+    padding: 8px 0px;
+    
 }
 .setting-box .setting-container{
 
