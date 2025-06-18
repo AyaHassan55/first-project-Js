@@ -33,6 +33,18 @@ colorsLi.forEach(li =>{
     });
 });
 
+// Switch random background
+const randomBackElement = document.querySelectorAll('.random-background span');
+randomBackElement.forEach(span =>{
+    span.addEventListener("click",(e) =>{
+        // remove active class from every children
+        e.target.parentElement.querySelectorAll(".active").forEach((ele)=>{
+            ele.classList.remove("active");
+        });
+        // add active class on self
+        e.target.classList.add("active");
+    });
+});
 
 // toggle setting
 document.querySelector('.toggle-setting .fa-gear').onclick = function(){

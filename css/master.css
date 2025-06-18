@@ -45,6 +45,7 @@ body{
 .setting-box .option-box h4{
     margin: 0;
     color: #666;
+    font-size: 14px;
 } 
 .setting-box .option-box .colors-list{
     list-style: none;
@@ -78,7 +79,29 @@ body{
 }.setting-box .option-box .colors-list li:nth-child(5){
     background-color: #4CAF50;
 }
+.setting-box .option-box .yes,
+.setting-box .option-box .no{
+    width: 50px;
+    display: inline-block;
+    background-color: #009988;
+    color: #eee;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: .5;
+}
+.setting-box .option-box .random-background span.active{
+    opacity: 1;
+}
+.setting-box .random-background .yes{
 
+}
+.setting-box .random-background .no{
+
+}
 /* End Setting Box */
 /* Start Landing page */
 .landing-page{
