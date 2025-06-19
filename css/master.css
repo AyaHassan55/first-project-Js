@@ -319,4 +319,62 @@ body{
     cursor: pointer;
 }
 /*-------- End Gallery------------- */
+/* Start Timeline */
+.timeline{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #EEE;
+}
+.timeline .timeline-content{
+    position: relative;
+    overflow: hidden;
+}
+.timeline .timeline-content:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: 50%;
+    margin-left: -1px;
+    top: 0;
+}
+.timeline-content .year{
+    margin: 20px auto;
+    color: #FFF;
+    width: 50px;
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 2px 5px;
+    border-radius: 2px;
+    position: relative;
+    z-index: 2;
+}
+.timeline-content .left,
+.timeline-content .right{
+    width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline-content .left{
+    float: left;
+}
+.timeline-content .right{
+    float: right;
+}
+.timeline-content .content{
+    background-color: #FFF;
+    padding: 20px;
+}
+.timeline-content .content h3{
+    color: var(--main-color);
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+.timeline-content .content p{
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+/*-------- End Timeline------------- */
 
