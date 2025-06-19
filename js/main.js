@@ -156,7 +156,34 @@ window.addEventListener("scroll", function () {
     skillsAnimated = true;
   }
 });
+// -----------------------Gallery--------------------------
 
+// Create popup with image
+let ourGallery = document.querySelectorAll('.gallery img');
+ourGallery.forEach(img =>{
+    img.addEventListener("click" , (e)=>{
+        // create overlay element
+        let overlay = document.createElement('div');
+        // add class name to overlay
+        overlay.className = 'popup-overlay';
+        // append overlay to the body
+        document.body.appendChild(overlay);
+
+        // create popup box
+        let popupBox = document.createElement('div');
+        // add class name to box
+        popupBox.className = 'popup-box';
+        // Create the image
+        let popupImg = document.createElement('img');
+        // set img source
+        popupImg.src = img.src;
+        // add image to popup box
+        popupBox.appendChild(popupImg);
+        // append popupbox to the body
+        document.body.appendChild(popupBox);
+    });
+
+});
 
 
 
