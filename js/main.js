@@ -112,5 +112,52 @@ function randomizeImgs (){
 } 
 randomizeImgs()
 
+// Select Skills Selector
+// let ourSkills = document.querySelector(".skills");
+
+// window.onscroll = function () {
+
+//   // Skills Offset Top
+//     let skillsOffsetTop = ourSkills.offsetTop;
+// // console.log(skillsOffsetTop);
+
+//   // Skills Outer Height
+//     let skillsOuterHeight = ourSkills.offsetHeight;
+
+
+//   // Window Height
+//     let windowHeight = this.innerHeight;
+
+//   // Window ScrollTop
+//     let windowScrollTop = this.pageYOffset;
+
+//     if (windowScrollTop + windowHeight >= skillsOffsetTop) {
+
+//         let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+            
+//         allSkills.forEach(skill => {skill.style.width = skill.dataset.progress; });
+
+//     }
+
+// };
+let ourSkills = document.querySelector(".skills");
+let skillsAnimated = false;
+
+window.addEventListener("scroll", function () {
+  let skillsOffsetTop = ourSkills.offsetTop;
+  let windowHeight = window.innerHeight;
+  let windowScrollTop = window.pageYOffset;
+
+  // شغل الأنميشن لما أول جزء من skills يدخل الشاشة
+  if (!skillsAnimated && windowScrollTop + windowHeight >= skillsOffsetTop) {
+    document.querySelectorAll(".skill-progress span").forEach(skill => {
+      skill.style.width = skill.dataset.progress;
+    });
+    skillsAnimated = true;
+  }
+});
+
+
+
 
 
