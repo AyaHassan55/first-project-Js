@@ -173,6 +173,24 @@ ourGallery.forEach(img =>{
         let popupBox = document.createElement('div');
         // add class name to box
         popupBox.className = 'popup-box';
+         
+        
+        if(img.alt !== null){
+            // create heading
+            let imgHeading = document.createElement('h3');
+
+            // create text for heading
+            let imgText= document.createTextNode(img.alt);
+
+            // append text to the heading
+            imgHeading.appendChild(imgText);
+
+            // append heading to popup box
+            popupBox.appendChild(imgHeading);
+                
+        }
+
+
         // Create the image
         let popupImg = document.createElement('img');
         // set img source
@@ -181,8 +199,36 @@ ourGallery.forEach(img =>{
         popupBox.appendChild(popupImg);
         // append popupbox to the body
         document.body.appendChild(popupBox);
+
+        // create close span
+        let closeButton = document.createElement('span');
+
+        // create close button text
+        let closeButtonText = document.createTextNode('X');
+
+        // append tect to close button
+        closeButton.appendChild(closeButtonText);
+
+        // add class to close button
+        closeButton.className = "close-button";
+        
+        // append close button to popup box
+        popupBox.appendChild(closeButton);
+
+
     });
 
+});
+// close popup
+document.addEventListener("click",function(e){
+    if(e.target.className === 'close-button'){
+        // remove current popup
+        e.target.parentNode.remove();
+
+        // remove overlay
+        document.querySelector('.popup-overlay').remove();
+    }
+    
 });
 
 
