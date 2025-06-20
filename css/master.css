@@ -415,4 +415,48 @@ body{
     left: -20px;
 }
 /*-------- End Timeline------------- */
+/*-------- Start Feature------------- */
+.features{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.features h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 0 0 50px;
+    text-align: center;
+}
+.features .feature-box{
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+.features .feature-box img{
+    width: 86px;
+}
+.features .feature-box h4{
+    font-size: 22px;
+    margin: 15px 0 40px;
+    position: relative;
+}
+.features .feature-box h4::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    bottom:-10px;
+    left: 50%;
+    margin-left: -20px;
+    background: var(--main-color);
+}
+.features .feature-box p{
+    width: 80%;
+    color: #706f6f;
+    line-height: 1.7;
+    margin: 0 auto;
+}
+/*-------- End Feature------------- */
 
