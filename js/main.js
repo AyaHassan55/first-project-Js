@@ -247,3 +247,75 @@ function scrollToSomewhere(elements){
 }
 scrollToSomewhere(allBullets);
 scrollToSomewhere(allLinks);
+
+// Handle Active State
+function handleActive(ev) {
+
+  // Remove Active Class From All Childrens
+ev.target.parentElement.querySelectorAll(".active").forEach(element => {
+
+    element.classList.remove("active");
+
+});
+
+  // Add Active Class On Self
+    ev.target.classList.add("active");
+
+}
+
+
+// logic bullet option
+let bulletsSpan = document.querySelectorAll(".bullets-option span");
+
+let bulletsContainer = document.querySelector(".nav-bullets");
+
+let bulletLocalItem = localStorage.getItem("bullets_option");
+
+if (bulletLocalItem !== null) {
+
+    bulletsSpan.forEach(span => {
+
+        span.classList.remove("active");
+
+    });
+
+    if (bulletLocalItem === 'block') {
+
+        bulletsContainer.style.display = 'block';
+
+        document.querySelector(".bullets-option .yes").classList.add("active");
+
+    } else {
+
+        bulletsContainer.style.display = 'none';
+
+        document.querySelector(".bullets-option .no").classList.add("active");
+
+    }
+
+}
+bulletsSpan.forEach(span => {
+
+    span.addEventListener("click", (e) => {
+
+    if (span.dataset.display === 'show') {
+
+        bulletsContainer.style.display = 'block';
+
+        localStorage.setItem("bullets_option", 'block');
+
+    } else {
+
+        bulletsContainer.style.display = 'none';
+
+        localStorage.setItem("bullets_option", 'none');
+
+    }
+
+    handleActive(e);
+
+    });
+
+});
+
+
