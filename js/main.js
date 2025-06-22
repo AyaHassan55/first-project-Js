@@ -231,9 +231,12 @@ document.addEventListener("click",function(e){
     
 });
 
-let allBullets = document.querySelectorAll('.nav-bullets');
-allBullets.forEach(bullet =>{
-    bullet.addEventListener("click", (e)=> {
+let allBullets = document.querySelectorAll('.nav-bullets .bullet');
+let allLinks = document.querySelectorAll('.links a');
+
+function scrollToSomewhere(elements){
+  elements.forEach(ele =>{
+    ele.addEventListener("click", (e)=> {
         document.querySelector(e.target.dataset.section).scrollIntoView({
             behavior:'smooth'
         })
@@ -241,3 +244,6 @@ allBullets.forEach(bullet =>{
     });
 
 });
+}
+scrollToSomewhere(allBullets);
+scrollToSomewhere(allLinks);
