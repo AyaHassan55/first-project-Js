@@ -231,6 +231,13 @@ document.addEventListener("click",function(e){
     
 });
 
+let allBullets = document.querySelectorAll('.nav-bullets');
+allBullets.forEach(bullet =>{
+    bullet.addEventListener("click", (e)=> {
+        document.querySelector(e.target.dataset.section).scrollIntoView({
+            behavior:'smooth'
+        })
 
+    });
 
-
+});

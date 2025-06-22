@@ -104,6 +104,55 @@ body{
 }
 
 /* End Setting Box */
+/*Start nav bullet  */
+.nav-bullets{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 1000;
+}
+.nav-bullets .bullet{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:3px solid var(--main-color);
+    margin: 20px auto;
+    cursor: pointer;
+    position: relative;
+
+}
+.nav-bullets .bullet .tooltip{
+    background-color: var(--main-color);
+    width: 120px;
+    color: #FFF;
+    padding: 8px 10px;
+    position: absolute;
+    right: 32px;
+    top: -10px;
+    text-align: center;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+}
+.nav-bullets .bullet:hover .tooltip{
+    display: block;
+}
+.nav-bullets .bullet .tooltip::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style:solid ;
+    border-width: 10px;
+    border-color: transparent transparent transparent var(--main-color);
+}
+/*End nav bullet  */
+
 /* Start Landing page */
 .landing-page{
     min-height: 100vh;
@@ -462,14 +511,14 @@ body{
 /*-------- Satrt testimonial------------- */
 .testimonial{
     position: relative;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    min-height: 600px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    /* min-height: 600px; */
 }
 .testimonial::before{
     content: '';
     width: 50%;
-    height: 72%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -478,7 +527,7 @@ body{
 .testimonial::after{
     content: '';
     width: 50%;
-    height: 72%;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -530,6 +579,9 @@ body{
 }
 
 /*-------- End testimonial------------- */
+/*-------- Start contact------------- */
+
+/*-------- End contact------------- */
 
 
 
