@@ -148,7 +148,7 @@ window.addEventListener("scroll", function () {
   let windowHeight = window.innerHeight;
   let windowScrollTop = window.pageYOffset;
 
-  // شغل الأنميشن لما أول جزء من skills يدخل الشاشة
+  
   if (!skillsAnimated && windowScrollTop + windowHeight >= skillsOffsetTop) {
     document.querySelectorAll(".skill-progress span").forEach(skill => {
       skill.style.width = skill.dataset.progress;
@@ -231,12 +231,13 @@ document.addEventListener("click",function(e){
     
 });
 
-let allBullets = document.querySelectorAll('.nav-bullets .bullet');
-let allLinks = document.querySelectorAll('.links a');
+const allBullets = document.querySelectorAll('.nav-bullets .bullet');
+const allLinks = document.querySelectorAll('.links a');
 
 function scrollToSomewhere(elements){
   elements.forEach(ele =>{
     ele.addEventListener("click", (e)=> {
+        e.preventDefault();
         document.querySelector(e.target.dataset.section).scrollIntoView({
             behavior:'smooth'
         })
@@ -317,5 +318,13 @@ bulletsSpan.forEach(span => {
     });
 
 });
+// reset button
+document.querySelector('.reset-option').onclick=function(){
+    localStorage.clear();
+    // localStorage.removeItem("bullets_option");
+    // localStorage.removeItem("color_option");
+    // localStorage.removeItem("background_option");
+    window.location.reload();
+};
 
 
