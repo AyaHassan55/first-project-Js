@@ -192,13 +192,17 @@ body{
     padding: 15px;
     width:300px;
 }
+.header-area .links-container{
+    width:100%;
+    text-align: right;
+}
 .header-area .links{
     list-style: none;
     padding: 0;
     width: 100%;
     text-align: right;
-    padding-right: 100px;
-    font-size: 15px;
+    /* padding-right: 100px; */
+    /* font-size: 15px; */
 }
 .header-area .links li{
     display: inline-block;
@@ -214,6 +218,25 @@ body{
     
     /* border: 1px solid #FFF; */
 }
+.header-area .toggle-menu{
+    background-color: none;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    margin-top:  15px;
+    display: none;
+    
+}
+.header-area .toggle-menu:focus{
+    outline: none;
+}
+.header-area .toggle-menu span{
+    display: block;
+    background-color: white;
+    height: 3px;
+    margin-bottom: 4px;
+}
+
 .intro-text{
     position: absolute;
     top: 50%;
@@ -234,6 +257,14 @@ body{
 .intro-text p{
     line-height: 1.6;
     font-size: 18px;
+}
+@media (max-width:991px) {
+    .header-area .links{
+        display: none;
+    }
+    .header-area .toggle-menu{
+        display: inline-block;
+    }
 }
 /* End Landing page */
 /* Start About us */
