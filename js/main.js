@@ -327,4 +327,32 @@ document.querySelector('.reset-option').onclick=function(){
     window.location.reload();
 };
 
+// toggle button
+let toggleButton = document.querySelector(".toggle-menu");
+let tlinks = document.querySelector(".links");
 
+toggleButton.onclick = function(e){
+    // Stop Propagation
+    e.stopPropagation();
+
+    // Toggle Class "menu-active" On Button
+    this.classList.toggle("menu-active");
+
+    // Toggle Class "open" On Links
+    tlinks.classList.toggle("open");
+}
+
+// click anywhere to close menu
+document.addEventListener('click' , (e)=>{
+    if(e.target !== toggleButton && e.target !== tlinks){
+        if(tlinks.classList.contains("open")){
+            toggleButton.classList.toggle("menu-active");
+            tlinks.classList.toggle("open");
+        }
+    }
+});
+
+// stop propagaton on menu
+tlinks.onclick = function(e){
+    e.stopPropagation();
+}

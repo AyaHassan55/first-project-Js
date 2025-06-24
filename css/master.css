@@ -219,7 +219,7 @@ body{
     /* border: 1px solid #FFF; */
 }
 .header-area .toggle-menu{
-    background-color: none;
+    background: none;
     border: none;
     width: 40px;
     cursor: pointer;
@@ -228,7 +228,7 @@ body{
     position: relative;
     
 }
-.header-area .toggle-menu::before{
+.header-area .toggle-menu.menu-active::before{
     content: '';
     border-width: 10px;
     border-style: solid;
